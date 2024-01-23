@@ -10,6 +10,7 @@
 
 
 
+___________________________________________________________________________________
 
 - 1st :
   WriteFile is just a simple wrapper for NtWriteFile.
@@ -80,7 +81,7 @@
 
 - 7th :
 
-  IofCallDriver takes a device object pointer (PDEVICE_OBJECT) and IRP pointer (PIRP) (both supplied by NtWriteFile). The device object contains a pointer to the driver object of the driver associated with that device (PDRIVER_OBJECT). The driver object contains a member called "MajorFunction", this is an array of 28 driver defined function pointers (a bit like an EAT or the SSDT), Here is a full list of IRP major function names.(http://pastebin.com/Pcce2VAm)
+  IofCallDriver takes a device object pointer (PDEVICE_OBJECT) and IRP pointer (PIRP) (both supplied by NtWriteFile). The device object contains a pointer to the driver object of the driver associated with that device (PDRIVER_OBJECT). The driver object contains a member called "MajorFunction", this is an array of 28 driver defined function pointers (a bit like an EAT or the SSDT), Here is a full list of IRP major function names.(https://pastebin.com/Pcce2VAm)
 
   IofCallDriver will call one of the IRP major functions, based on which one is specified by the "MajorFunction" member in the IO_STACK_LOCATION for the supplied IRP.
 
@@ -118,7 +119,7 @@
 ___________________________________________________________________________________
 
 
-# Conclusion:
+# Conclusion :
 
   The term "kernel function" refers to any function beginning with Nt or Zw. I call these kernel functions because the code resides in the kernel, for a user mode application to call one of these functions, it must enter the kernel via SYSENTER.
 
@@ -137,7 +138,7 @@ ________________________________________________________________________________
 
 ___________________________________________________________________________________
 
-Happy Hacking
+- Happy Hacking
 
 
 
